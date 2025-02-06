@@ -4,6 +4,19 @@ from src.utils.config import Config
 from src.utils.logger import setup_logger
 from transformers import BertForSequenceClassification, BertTokenizer
 
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+
+uri = "mongodb+srv://yescodersai:HPPz5fqlhvqI8KdR@cluster0.mqfoh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+# Create a new client and connect to the server
+client = MongoClient(uri, server_api=ServerApi('1'))
+# Send a ping to confirm a successful connection
+try:
+    client.admin.command('ping')
+    print("Pinged your deployment. You successfully connected to MongoDB!")
+except Exception as e:
+    print(e)
+
 logger = setup_logger("Model Validator")
 
 # Load test data from MongoDB

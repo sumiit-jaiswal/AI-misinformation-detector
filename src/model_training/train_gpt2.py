@@ -25,10 +25,17 @@ def load_data(file_path):
     claims = []
     labels = []
     with open(file_path) as f:
-        for line in f:
-            data = json.loads(line)
-            claims.append(data["claim"])
-            labels.append(1 if data["label"] in ["true", "real"] else 0)
+        for line_num, line in enumerate(f, 1):
+            line = line.strip()
+            if not line:  # Skip empty lines
+                continue
+            try:
+                data = json.loads(line)
+                claims.append(data["claim"])
+                labels.append(1 if data["label"] in ["true", "real"] else 0)
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON in {file_path} at line {line_num}: {line}")
+                raise  # Optional: Remove this to continue processing despite errors
     return claims, labels
 
 def main():
