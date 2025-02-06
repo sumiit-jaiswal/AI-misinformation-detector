@@ -1,0 +1,40 @@
+2025-02-06 15:37:30,978 - my_logger - INFO - This is an info message
+2025-02-06 15:37:30,978 - my_logger - ERROR - This is an error message
+2025-02-06 15:39:25,371 - my_logger - INFO - This is an info message
+2025-02-06 15:39:25,371 - my_logger - ERROR - This is an error message
+2025-02-06 15:39:25,387 - Data Preprocessor - INFO - Starting data preprocessing...
+2025-02-06 15:39:25,424 - Data Preprocessor - INFO - Loaded LIAR dataset with 10240 rows.
+2025-02-06 15:39:25,445 - Data Preprocessor - INFO - LIAR dataset preprocessing complete.
+2025-02-06 15:39:25,448 - Data Preprocessor - INFO - Searching for JSON files in data\raw\FakeNewsNet\data
+2025-02-06 15:39:25,449 - Data Preprocessor - INFO - Loaded 0 claims from FakeNewsNet dataset.
+2025-02-06 15:39:25,450 - Data Preprocessor - WARNING - No claims found in the FakeNewsNet dataset.
+2025-02-06 15:39:25,450 - Data Preprocessor - INFO - Data preprocessing complete.
+2025-02-06 15:42:55,323 - Data Preprocessor - INFO - Starting data preprocessing...
+2025-02-06 15:42:55,367 - Data Preprocessor - INFO - Loaded LIAR dataset with 10240 rows.
+2025-02-06 15:42:55,394 - Data Preprocessor - INFO - LIAR dataset preprocessing complete.
+2025-02-06 15:42:55,396 - Data Preprocessor - INFO - Searching for JSON files in data\raw\FakeNewsNet\data
+2025-02-06 15:42:55,398 - Data Preprocessor - INFO - Loaded 0 claims from FakeNewsNet dataset.
+2025-02-06 15:42:55,398 - Data Preprocessor - WARNING - No claims found in the FakeNewsNet dataset.
+2025-02-06 15:42:55,398 - Data Preprocessor - INFO - Data preprocessing complete.
+2025-02-06 15:44:46,546 - Data Preprocessor - INFO - Starting data preprocessing...
+2025-02-06 15:44:46,575 - Data Preprocessor - INFO - Loaded LIAR dataset with 10240 rows.
+2025-02-06 15:44:46,603 - Data Preprocessor - INFO - LIAR dataset preprocessing complete.
+2025-02-06 15:44:46,603 - Data Preprocessor - INFO - Searching for CSV files in data\raw\FakeNewsNet\data
+2025-02-06 15:44:46,605 - Data Preprocessor - INFO - Found 4 CSV files.
+2025-02-06 15:44:46,740 - Data Preprocessor - INFO - Loaded data\raw\FakeNewsNet\data\gossipcop_fake.csv with 5323 rows.
+2025-02-06 15:44:47,130 - Data Preprocessor - INFO - Loaded data\raw\FakeNewsNet\data\gossipcop_real.csv with 16817 rows.
+2025-02-06 15:44:47,580 - Data Preprocessor - INFO - Loaded data\raw\FakeNewsNet\data\politifact_fake.csv with 432 rows.
+2025-02-06 15:44:47,688 - Data Preprocessor - INFO - Loaded data\raw\FakeNewsNet\data\politifact_real.csv with 624 rows.
+2025-02-06 15:44:47,715 - Data Preprocessor - INFO - Loaded 23196 claims from FakeNewsNet dataset.
+2025-02-06 15:44:47,747 - Data Preprocessor - INFO - FakeNewsNet dataset preprocessing complete.
+2025-02-06 15:44:47,755 - Data Preprocessor - INFO - Data preprocessing complete.
+2025-02-06 15:45:51,987 - GPT-2 Trainer - INFO - Loaded 10240 train claims.
+2025-02-06 15:45:51,987 - GPT-2 Trainer - INFO - Loaded 23196 validation claims.
+2025-02-06 15:45:51,987 - GPT-2 Trainer - INFO - First 3 train claims: ['Says the Annies List political group supports third-trimester abortions on demand.', 'When did the decline of coal start? It started when natural gas took off that started to begin in (President George W.) Bushs administration.', 'Hillary Clinton agrees with John McCain "by voting to give George Bush the benefit of the doubt on Iran."']
+2025-02-06 15:45:51,987 - GPT-2 Trainer - INFO - First 3 validation claims: ['Did Miley Cyrus and Liam Hemsworth secretly get married?', 'Paris Jackson & Cara Delevingne Enjoy Night Out In Matching Outfits: They Have ‘Amazing Chemistry’', 'Celebrities Join Tax March in Protest of Donald Trump']
+2025-02-06 15:45:52,877 - GPT-2 Trainer - INFO - Tokenizing training data...
+2025-02-06 15:45:54,716 - GPT-2 Trainer - INFO - Tokenizing validation data...
+2025-02-06 15:45:57,595 - GPT-2 Trainer - INFO - Train encodings: dict_keys(['input_ids', 'attention_mask'])
+2025-02-06 15:45:57,595 - GPT-2 Trainer - INFO - Validation encodings: dict_keys(['input_ids', 'attention_mask'])
+2025-02-06 15:59:40,766 - FAISS Builder - WARNING - Missing fields in document: {'_id': ObjectId('67a44fc1642647eba1260ad2'), 'title': 'CDC COVID-19 Fact Sheet', 'url': 'https://www.cdc.gov/coronavirus/2019-ncov/index.html', 'publisher': 'Centers for Disease Control and Prevention', 'reliability_score': 9.8, 'source_id': '727b2e64-09d5-4dfa-874b-a26827592c3d', 'timestamp': datetime.datetime(2025, 2, 6, 5, 59, 29, 228000)}
+2025-02-06 16:02:46,953 - FAISS Builder - WARNING - Missing fields in document: {'_id': ObjectId('67a44fc1642647eba1260ad2'), 'title': 'CDC COVID-19 Fact Sheet', 'url': 'https://www.cdc.gov/coronavirus/2019-ncov/index.html', 'publisher': 'Centers for Disease Control and Prevention', 'reliability_score': 9.8, 'source_id': '727b2e64-09d5-4dfa-874b-a26827592c3d', 'timestamp': datetime.datetime(2025, 2, 6, 5, 59, 29, 228000)}

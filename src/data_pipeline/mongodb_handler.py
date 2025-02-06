@@ -75,12 +75,13 @@ class MongoDBHandler:
             self.sources = self.db.create_collection("sources", validator={
                 "$jsonSchema": {
                     "bsonType": "object",
-                    "required": ["title", "url", "publisher"],
+                    "required": ["title", "url", "publisher", "text"],  # Added "text" field as required
                     "properties": {
                         "source_id": {"bsonType": "string"},
                         "title": {"bsonType": "string"},
                         "url": {"bsonType": "string"},
                         "publisher": {"bsonType": "string"},
+                        "text": {"bsonType": "string"},  # Add "text" field
                         "timestamp": {"bsonType": "date"},
                     }
                 }
@@ -125,8 +126,8 @@ class MongoDBHandler:
         """Insert a source document with validation"""
         try:
             # Validate required fields
-            if not all(k in source_data for k in ["title", "url", "publisher"]):
-                raise ValueError("Missing required fields: title, url, or publisher")
+            if not all(k in source_data for k in ["title", "url", "publisher", "text"]):  # Ensure "text" field is checked
+                raise ValueError("Missing required fields: title, url, publisher, or text")
                 
             # Generate document ID and timestamp
             source_data.setdefault("source_id", str(uuid.uuid4()))
@@ -150,7 +151,7 @@ class MongoDBHandler:
             self.client.close()
             logger.info("MongoDB connection closed")
 
-# Modified example usage section
+# Example usage in MongoDBHandler
 if __name__ == "__main__":
     try:
         with MongoDBHandler() as handler:
@@ -192,6 +193,7 @@ if __name__ == "__main__":
                 "title": "CDC COVID-19 Fact Sheet",
                 "url": "https://www.cdc.gov/coronavirus/2019-ncov/index.html",
                 "publisher": "Centers for Disease Control and Prevention",
+                "text": "This fact sheet provides information about COVID-19 and how to protect yourself and others.",
                 "reliability_score": 9.8
             }
             source_id = handler.insert_source(reliable_source)
