@@ -8,3 +8,5 @@ python -m src.model_training.sarcasm_sentiment.train_sarcasm
 python src/data_pipeline/api_clients/news_api.py
 
 uvicorn main:app --reload
+
+pip freeze > requirements.txt 
